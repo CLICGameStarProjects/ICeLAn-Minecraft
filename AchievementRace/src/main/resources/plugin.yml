@@ -1,0 +1,8 @@
+name: AchievementRace
+version: '${version}'
+main: org.clic.gamestar.achievementrace.AchievementRace
+api-version: '1.19'
+commands:
+  run:
+    description: Start or stop a run
+    usage: /run <start|stop>
