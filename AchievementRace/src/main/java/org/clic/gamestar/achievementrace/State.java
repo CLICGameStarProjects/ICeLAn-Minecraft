@@ -36,7 +36,7 @@ public class State {
             resultsTable.addProperty(playerName, score);
         }
 
-        setScore(playerName, 0);
+        state.getAsJsonObject("scores").remove(playerName);
 
         save();
     }

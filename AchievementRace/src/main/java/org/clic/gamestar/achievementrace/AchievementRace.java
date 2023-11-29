@@ -15,7 +15,10 @@ public final class AchievementRace extends JavaPlugin {
         LOGGER = this.getLogger();
 
         State.load();
+        Config.load();
+
         this.getCommand("run").setExecutor(new RunCommandExecutor());
+        this.getServer().getPluginManager().registerEvents(new AchievementListener(), this);
     }
 
     @Override
