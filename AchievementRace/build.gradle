@@ -15,10 +15,17 @@ repositories {
         name = "sonatype"
         url = "https://oss.sonatype.org/content/groups/public/"
     }
+    maven {
+        name = "multiverse2"
+        url = "https://repo.onarandombox.com/content/groups/public/"
+    }
 }
 
 dependencies {
-    compileOnly "org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT"
+    compileOnly("org.spigotmc:spigot-api:1.19.2-R0.1-SNAPSHOT")
+    compileOnly("com.onarandombox.multiversecore:multiverse-core:4.3.12")
+    compileOnly("com.onarandombox.multiversenetherportals:Multiverse-NetherPortals:4.2.2")
+    //compileOnly("com.onarandombox.multiverseinventories:multiverse-inventories:4.2.6")
 }
 
 def targetJavaVersion = 17
@@ -49,7 +56,7 @@ processResources {
 task setup_plugin {
     doLast {
         copy {
-            from ('build/libs/') {
+            from('build/libs/') {
                 include '*.jar'
             }
             into '../server/plugins'

@@ -6,3 +6,7 @@ commands:
   run:
     description: Start or stop a run
     usage: /run <start|stop>
+depend:
+  - 'Multiverse-Core'
+  - 'Multiverse-NetherPortals'
+
