@@ -13,7 +13,7 @@ public class AchievementListener implements Listener {
                     event.getPlayer().getName(),
                     State.getScore(event.getPlayer().getName()) + achievementValue
             );
-            event.getPlayer().sendMessage(ChatColor.DARK_GREEN + "Your score now is " + State.getScore(event.getPlayer().getName()));
+            event.getPlayer().sendMessage(ChatColor.GREEN + "Your score now is " + State.getScore(event.getPlayer().getName()));
         }
     }
 }

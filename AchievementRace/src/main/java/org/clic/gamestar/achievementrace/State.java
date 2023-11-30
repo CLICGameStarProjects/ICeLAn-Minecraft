@@ -30,7 +30,7 @@ public class State {
     public static void saveResult(String playerName) {
         var resultsTable = state.getAsJsonObject("results");
         var currentResult = resultsTable.get(playerName);
-        var score = state.getAsJsonObject("scores").get(playerName).getAsInt();
+        var score = getScore(playerName);
 
         if (currentResult == null || currentResult.getAsNumber().intValue() < score) {
             resultsTable.addProperty(playerName, score);
