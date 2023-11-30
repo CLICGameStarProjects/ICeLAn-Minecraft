@@ -45,3 +45,15 @@ processResources {
         expand props
     }
 }
+
+task setup_plugin {
+    doLast {
+        copy {
+            from ('build/libs/') {
+                include '*.jar'
+            }
+            into '../server/plugins'
+        }
+    }
+}
+build.finalizedBy(setup_plugin)
