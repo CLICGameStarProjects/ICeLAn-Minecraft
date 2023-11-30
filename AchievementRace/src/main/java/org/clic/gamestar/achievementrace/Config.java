@@ -14,6 +14,7 @@ public class Config {
     }
 
     public static int getAchievementValue(String achievementName) {
-        return configuration.getConfigurationSection("achievements").getInt(achievementName, 0);
+        var section = configuration.getConfigurationSection("achievements");
+        return section != null ? section.getInt(achievementName, 0) : 0;
     }
 }
